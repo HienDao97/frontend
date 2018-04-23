@@ -1,0 +1,97 @@
+*{
+	box-sizing: border-box;
+	margin: 0;
+}
+body{
+	font-family: Arial, Vertical;
+}
+/*.active{
+	background-color: blue;
+}*/
+
+span{
+	color: red;
+}
+i{
+	color: red;
+}
+h3{
+	padding-top: 15px;
+}
+.tab{
+	overflow: hidden;
+	margin-bottom: 30px;
+	margin-top: 30px;
+
+
+}
+.tab button{
+	border: 1px solid #ccc;
+	background-color: #808080;
+	color: #fff;
+	float: left;
+	width: 20%;
+	outline: none;
+	cursor: pointer;
+	padding: 14px 16px;
+	margin-right: 5px;
+	transition: 0.3s;
+	font-size: 17px;
+	border-radius: 5px;
+	text-align: left;
+	opacity: 0.5;
+}
+.tab button:hover {
+	background-color: #ddd;
+	color: #000;
+}
+#content{
+	width: 81%;
+	height: 500px;
+	background-color: #ccc;
+	padding-left: 30px;
+	position: relative;
+}
+.tabcontent{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+/*.tabcontent:not(:first-child){
+	display: none;
+}*/
+.tabcontent{
+	display: none;
+}
+.sub{
+	margin-top: 20px;
+}
+.sub input{
+	width: 200px;
+	height: 32px;
+
+}
+
+form {
+	position: relative;
+}
+#bnt{
+	position: absolute;
+	right: 300px;
+	
+}
+#bnt >button{
+	width: 120px;
+	height: 40px;
+	line-height: 40px;
+	background-color: blue;
+	float: left;
+	margin-left: 7px;
+	cursor: pointer;
+	
+}
+input{
+	border-radius: 5px;
+}

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>SlideShow</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="../css/unit09/ex2.css">
+	
+</head>
+<body>
+
+	<div class="slideshow-container">
+
+		<div class="mySlides fade">
+			<div class="numbertext">1/8</div>
+			<img src="../images/AnhKhoa/bk.jpg" alt="" width="100%" height="500px">
+			<div class="text">Where I meet U</div>
+		</div>
+
+		<div class="mySlides fade">
+			<div class="numbertext">2/8</div>
+			<img src="../images/AnhKhoa/tay.jpg" alt="" width="100%" height="500px">
+			<div class="text">U or ... ?</div>
+		</div>
+
+		<div class="mySlides fade">
+			<div class="numbertext">3/8</div>
+			<img src="../images/AnhKhoa/bien.jpg" alt="" width="100%" height="500px">
+			<div class="text">Where do we go?</div>
+		</div>
+
+		<div class="mySlides fade">
+			<div class="numbertext">4/8</div>
+			<img src="../images/AnhKhoa/ca.jpg" alt="" width="100%" height="500px">
+			<div class="text">Ahihi ^^</div>
+		</div>
+
+		<div class="mySlides fade">
+			<div class="numbertext">5/8</div>
+			<img src="../images/AnhKhoa/chieu.jpg" alt="" width="100%" height="500px">
+			<div class="text">Village</div>
+		</div>
+
+		<div class="mySlides fade">
+			<div class="numbertext">6/8</div>
+			<img src="../images/AnhKhoa/que.jpg" alt="" width="100%" height="500px">
+			<div class="text">=]]]</div>
+		</div>
+
+		<div class="mySlides fade">
+			<div class="numbertext">7/8</div>
+			<img src="../images/AnhKhoa/xe.jpg" alt="" width="100%" height="500px">
+			<div class="text">[[[[=</div>
+		</div>
+
+		<div class="mySlides fade">
+			<div class="numbertext">8/8</div>
+			<img src="../images/AnhKhoa/me.jpg" alt="" width="100%" height="500px">
+			<div class="text">^^</div>
+		</div>
+
+		<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+		<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+		<div style="position: absolute;bottom: 5px;right: 5px;">
+			<span class="dot" onclick="currentSlide(1)"></span> 
+			<span class="dot" onclick="currentSlide(2)"></span> 
+			<span class="dot" onclick="currentSlide(3)"></span> 
+			<span class="dot" onclick="currentSlide(4)"></span> 
+			<span class="dot" onclick="currentSlide(5)"></span> 
+			<span class="dot" onclick="currentSlide(6)"></span> 
+			<span class="dot" onclick="currentSlide(7)"></span> 
+			<span class="dot" onclick="currentSlide(8)"></span> 
+
+
+		</div>
+
+	</div>
+
+
+	
+	
+	<script>
+
+
+		var slideIndex = 1;
+		showSlides(slideIndex);
+
+ // Next/previous controls
+		 function plusSlides(n) {
+		 	showSlides(slideIndex += n);
+		 }
+
+// Thumbnail image controls
+		function currentSlide(n) {
+			showSlides(slideIndex = n);
+		}
+
+		function showSlides(n) {
+
+			var i;
+			var slides = document.getElementsByClassName("mySlides");
+			console.log(slides);
+			var dots = document.getElementsByClassName("dot");
+			if (n > slides.length) {slideIndex = 1} 
+			if (n < 1) {slideIndex = slides.length}
+
+			for (i = 0; i < slides.length; i++) {
+					slides[i].style.display = "none"; 
+				}
+
+			for (i = 0; i < dots.length; i++) {
+					dots[i].className = dots[i].className.replace(" active", "");
+				}
+			slides[slideIndex-1].style.display = "block"; 
+			dots[slideIndex-1].className += " active";
+
+
+
+		}
+
+		autoSlide();
+		function autoSlide(){
+			var i;
+			var slides = document.getElementsByClassName("mySlides");
+			for (i = 0; i < slides.length; i++) {
+				slides[i].style.display = "none"; 
+			}
+			if (slideIndex > slides.length) {slideIndex = 1} 
+				slides[slideIndex-1].style.display = "block"; 
+			slideIndex++;
+			setTimeout(autoSlide,10000);
+
+		}
+
+
+	</script>
+
+</body>
+</html>

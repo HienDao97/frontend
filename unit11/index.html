@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		/*#content{
+			width: 200px;
+			height: 200px;
+			background-color: green;
+		}
+		#chil{
+			width: 50px;
+			height: 50px;
+			background-color: red;
+		}*/
+	</style>
+</head>
+<body>
+	<input type="text" id="input">
+	<button id="add">ADD</button>
+	<button id="update" style="display: none;">UPDATE</button>
+	<button id="checkall">CheckAll</button>
+	<button id="uncheckall">UncheckAll</button>
+	<button id="del">Delete</button>
+	<div id="content"></div>
+	<script src="../js/jquery.min.js"></script>
+	<script>
+		// function change(){
+		// 	var s = $('select').val(1);
+		// 	$('#content').append('<p>'+s+'</p>');
+		// }
+		// var i = 1;
+		// $('#click').click(function(){
+		// 	$('#content').prepend('<div><button class="del" id="'+i+'">Xoa</button></div>');
+		// 	i++;
+		// })
+		// $('#content').on('click','.del',function(){
+		// 	$(this).parent().remove();
+		// })
+
+		// $('#content').click(function(){
+		// 	alert('parent');
+		// })
+
+		// $('#chil').click(function(e){
+		// 	e.stopPropagation();
+		// 	alert('chil');
+		// })
+		var count =1;
+		$('#add').click(function(){
+			var input = $('#input').val();
+			var text = '<div class="sub" id="'+count+'"><input type="checkbox" class="check">'+input+'<button class="edit" content="'+input+'">Edit</button> <button >xoa</button> </div>';
+			$('#content').prepend(text);
+			$('#input').val('');
+			count++;
+		})
+
+		// $('body').on('click','#checkall',function(){
+		// 	var check = $('.check');
+		// 	for (var i = check.length - 1; i >= 0; i--) {
+		// 		check[i].checked= true;
+		// 	}
+		// })
+		$('body').on('click','#checkall',function(){
+			$("input[type='checkbox']").each(function(index){
+				$(this).prop('checked', true);
+			})
+		})
+
+
+
+		$('body').on('click','#uncheckall',function(){
+			var check = $('.check');
+			for (var i = check.length - 1; i >= 0; i--) {
+				check[i].checked= false;
+			}
+		})
+		// $('body').on('click','#del',function(){
+		// 	var del = $('.check');
+		// 	for (var i = del.length - 1; i >= 0; i--) {
+		// 		if(del[i].checked=true){
+		// 			del[i].parents().remove();
+		// 		}else{
+		// 			return ;
+		// 		}
+				
+		// 	}
+		// })
+
+		$('body').on('click','#del',function(){
+			
+			 $("input[type='checkbox']").each(function(index,value){
+			 	if($(this).is(':checked'))
+			 		$(this).parents('.sub').remove();
+			 })
+
+		})
+
+		// edit button
+
+		$('body').on('click','.edit',function(){
+			var content =$(this).attr('content');
+			// $('input').
+			
+
+		})
+
+
+	</script>
+</body>
+</html>

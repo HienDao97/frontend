@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../js/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>
+	#content{
+		width: 70%;
+		text-align: center;
+		margin-left: 15%;
+
+	}
+	.accordion {
+		background-color: #eee;
+		color: #444;
+		cursor: pointer;
+		padding: 18px 0;
+		/*padding: 18px;*/
+		width: 100%;
+		text-align: left;
+		border: none;
+		outline: none;
+		transition: 0.4s;
+	}
+
+
+	.active, .accordion:hover {
+		background-color: #ccc;
+	}
+
+	
+	.panel {
+		/*padding: 0 18px;*/
+		background-color: #ffe6ff;
+		display: none;
+		overflow: hidden;
+	}
+	.minus{
+		display: none;
+	}
+	.btn{
+		width: 40px;
+		height: 40px;
+		background-color: green;
+		opacity: 0.5;
+
+	}
+	
+</style>
+</head>
+<body>
+	<div id="content">
+		<div class="accordion">
+			<button class="btn plus" id="btn1_plus"><i class="fa fa-plus" aria-hidden="true"></i></button>
+			<button class="btn minus" id="btn1_mus"><i class="fa fa-minus" aria-hidden="true"></i></button>
+
+		Section 1</div>
+		<div class="panel">
+			<p>Lorem ipsum... Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque non cum atque aperiam similique, sed velit enim soluta repudiandae necessitatibus.</p>
+		</div>
+
+		<div class="accordion">
+			<button class="btn plus" id="btn2_plus"><i class="fa fa-plus" aria-hidden="true"></i></button>
+			<button class="btn minus" id="btn2_mus"><i class="fa fa-minus" aria-hidden="true"></i></button>
+		Section 2</div>
+		<div class="panel">
+			<p>Lorem ipsum...</p>
+		</div>
+
+		<div class="accordion">
+			<button class="btn plus" id="btn3_plus"><i class="fa fa-plus" aria-hidden="true"></i></button>
+			<button class="btn minus" id="btn3_mus"><i class="fa fa-minus" aria-hidden="true"></i></button>
+		Section 3</div>
+		<div class="panel">
+			<p>Lorem ipsum...</p>
+		</div>
+	</div>
+	
+	
+	<script>
+
+		$(function(){
+			$('#btn1_plus').on('click',function(){
+				$('#btn1_plus').hide();
+				$('#btn1_mus').show();
+				$('.panel').eq(0).show();
+			})
+			$('#btn2_plus').on('click',function(){
+				$('#btn2_plus').hide();
+				$('#btn2_mus').show();
+				$('.panel').eq(1).show();
+			})
+			$('#btn3_plus').on('click',function(){
+				$('#btn3_plus').hide();
+				$('#btn3_mus').show();
+				$('.panel').eq(2).show();
+			})
+
+			$('#btn1_mus').on('click',function(){
+				$('#btn1_mus').hide();
+				$('#btn1_plus').show();
+				$('.panel').eq(0).hide();
+			})
+			$('#btn2_mus').on('click',function(){
+				$('#btn2_mus').hide();
+				$('#btn2_plus').show();
+				$('.panel').eq(1).hide();
+			})
+			$('#btn3_mus').on('click',function(){
+				$('#btn3_mus').hide();
+				$('#btn3_plus').show();
+				$('.panel').eq(2).hide();
+			})
+
+		})
+		
+
+	</script>
+
+</body>
+</html>

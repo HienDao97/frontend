@@ -1,0 +1,178 @@
+body{
+		background-image: url(../../images/bg.jpg);
+		background-size: auto;
+}
+
+.element_sub img{
+			
+
+			width: 250px;
+			height: 180px;
+			position: absolute;
+			bottom: 0;
+			z-index: 2;
+			opacity: 0.7;
+			border-bottom-left-radius: 15px;
+			border-bottom-right-radius: 15px;
+		
+}
+.element_sub img:hover{
+	opacity: 1;
+}
+
+			
+#container{
+	width: 90%;
+	height: 1000px;
+}
+#menu{
+	width: 100%;
+	height: 100px;
+	position: relative;
+	
+
+}
+#logo{
+	font-family: Arial;
+	font-size: 50px;
+	width: 20%;
+	height: 100%;
+	text-align: center;
+	font-style: italic;
+	position: absolute;
+	left: 50px;
+	top: 0px;
+	
+}
+#dangnhap{
+	position: absolute;
+	right: 138px;
+	top: 0px;
+}
+#dangnhap ul{
+	margin-top: 0px;
+}
+#dangnhap ul li{
+	float:left;
+	list-style: none;
+	padding: 5px 20px;
+	line-height: 30px;
+}
+#dangnhap ul li a{
+	color: black;
+	text-decoration: none;
+	line-height: 50px;
+	font-size: 22px;
+}
+#dangnhap ul li:hover{
+	background-color: #ccc;
+	border-radius: 8%;
+}
+#content{
+	width: 100%;
+	height: 800px;
+	position: relative;
+
+}
+#left{
+	width: 20%;
+	height: 100%;
+	position: absolute;
+	left: 25px;
+	top: 0px;
+	
+}
+
+#left ul{
+	
+	margin-top: 25px;
+}
+#left ul li{
+	list-style: none;
+	width: 150px;
+	height: 25px;
+	line-height: 25px;
+
+}
+#left  ul li a{
+	text-decoration: none;
+	font-size: 19px;
+	
+
+}
+#left a:hover{
+	color: red;
+	
+}
+#left p{
+	position: absolute;
+	bottom: 0px;
+	margin: 0px;
+	font-family: Arial;
+	font-weight: bold;
+	font-size: 24px;
+}
+#right{
+	width: 59%;
+	height: 100%;
+	position: absolute;
+	left: 25%;
+	top: 0px;
+}
+
+#right ul li {
+	list-style: none;
+	float: left;
+	padding: 5px 10px;
+}
+
+.element{
+	width: 250px;
+	height: 220px;
+	background-color: #D8D8D8;
+	border-radius: 15px;
+	position: relative;
+	float: left;
+	margin: 5px 10px;
+	z-index: 1;
+}
+
+.element> h3{
+	margin: 0px;
+	line-height: 40px;
+	padding-left: 5px;
+	
+	
+}
+.note{
+	width: 242px;
+	height: 40px;
+	position: absolute;
+	bottom: 0px;	
+	text-align: left;
+	background:rgba(0,0,0,0.3);
+	color: #fff;
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+	font-size: 15px;
+	padding-left: 8px;
+	z-index: 3;
+
+}
+
+#menu_right{
+	position: absolute;
+	bottom: 0px;
+}
+#menu_right ul li {
+	list-style: none;
+	padding: 0px 20px;
+}
+#menu_right a{
+	font-size: 18px;
+}
+#menu_right a:hover{
+	color: red;
+}
+
+

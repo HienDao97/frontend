@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="../css/unit10/ex2.css">
+</head>
+<body>
+	<!-- <input type="text" id="input" onkeyup="checkValidate()">
+	<button onclick="add()" disabled="" id="ADD">ADD</button>
+	<button onclick="checkall(true)" id="checkall">CheckAll</button>
+	<button onclick="checkall(false)">UncheckAll</button>
+	<button onclick="DeleteAll()">Delete</button>
+
+	<table>
+		<tbody  id="content">
+			
+		</tbody>
+	</table>	
+	<script>
+		var i=1; 
+
+		function checkValidate(){
+			var input = document.getElementById('input');
+			if(input.value !=""){
+				document.getElementById('ADD').disabled=false;
+			}else{
+				document.getElementById('ADD').disabled=true;
+			}
+		}
+
+
+		function add(){
+			var input = document.getElementById('input');
+			
+				var tr = '<tr id="'+i+'" class="tr"><td><input type="checkbox" class="check" value="'+i+'"></td><td >'+input.value+'</td><td><button onclick="edit('+i+')">Edit</button><button onclick="del('+i+')">Delete</button></td></tr>';
+				var content = document.getElementById('content');
+				content.innerHTML= tr+content.innerHTML;
+				input.value='';
+
+				document.getElementById('ADD').disabled=true;
+		}
+
+		function del(id){
+			document.getElementById(id).remove();
+		}
+		function checkall(a){
+			var check =document.getElementsByClassName('check');
+			for(var j=0; j<check.length;j++){
+				check[j].checked=a;
+			}
+		}
+		
+		function DeleteAll(){
+			var del = document.getElementsByClassName('check');
+			
+				for(var k=0; k<del.length;k++){
+				if(del[k].checked==true){
+					document.getElementById(del[k].value).remove();
+				}
+			}
+		}
+			
+		
+	</script> -->
+	<h2 style="text-align:center">Lightbox</h2>
+
+	<div class="row">
+		<div class="column">
+			<img src="../images/AnhKhoa/bk.jpg" style="width:100%; height: 300px;" onclick="currentSlide(1)"  class="hover-shadow cursor">
+		</div>
+		<div class="column">
+			<img src="../images/AnhKhoa/chieu.jpg" style="width:100%; height: 300px;" onclick="currentSlide(2)" class="hover-shadow cursor">
+		</div>
+		<div class="column">
+			<img src="../images/AnhKhoa/que.jpg" style="width:100%;height: 300px;"onclick="currentSlide(3)" class="hover-shadow cursor">
+		</div>
+		<div class="column">
+			<img src="../images/AnhKhoa/me.jpg" style="width:100%;height: 300px;" onclick="currentSlide(4)" class="hover-shadow cursor">
+		</div>
+	</div>
+
+	<div id="myModal" class="modal">
+		<span class="close cursor" >&times;</span>
+		<div class="modal-content">
+
+			<div class="mySlides">
+				<div class="numbertext">1 / 4</div>
+				<img src="../images/AnhKhoa/bk.jpg" style="width:100%;height: 500px;">
+			</div>
+
+			<div class="mySlides">
+				<div class="numbertext">2 / 4</div>
+				<img src="../images/AnhKhoa/chieu.jpg" style="width:100%;height: 500px;">
+			</div>
+
+			<div class="mySlides">
+				<div class="numbertext">3 / 4</div>
+				<img src="../images/AnhKhoa/que.jpg" style="width:100%;height: 500px;">
+			</div>
+
+			<div class="mySlides">
+				<div class="numbertext">4 / 4</div>
+				<img src="../images/AnhKhoa/me.jpg" style="width:100%;height: 500px;">
+			</div>
+			<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+			<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+			<div class="caption-container">
+				<p id="caption"></p>
+			</div>
+
+
+			<div class="column">
+				<img class="demo cursor" src="../images/AnhKhoa/bk.jpg" style="width:100%; height: 300px;" onclick="currentSlide(1)" alt="Where I meet U">
+			</div>
+			<div class="column">
+				<img class="demo cursor" src="../images/AnhKhoa/chieu.jpg" style="width:100% ; height: 300px;" onclick="currentSlide(2)" alt="Where we go together...">
+			</div>
+			<div class="column">
+				<img class="demo cursor" src="../images/AnhKhoa/que.jpg" style="width:100%; height: 300px;"onclick="currentSlide(3)" alt="My village or your village?">
+			</div>
+			<div class="column">
+				<img class="demo cursor" src="../images/AnhKhoa/me.jpg" style="width:100%; height: 300px;" onclick="currentSlide(4)" alt="Where are U?">
+			</div>
+		</div>
+	</div>
+	
+
+	<script src="../js/jquery.min.js"></script>
+	<script src="../js/unit10/ex2.js"></script> 
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+.phone{
+	width: 150px;
+	height: 180px;
+	border: 2px solid grey;
+	display: inline-block;
+	text-align: center;
+	margin-right: 10px;
+	}
+
+.phone img{
+	margin-top: 20px;
+
+}
+.phone:hover {
+	border: 2px solid red;
+}
+.phone p{
+	color: red;
+
+}
+.phone p:hover {
+	color: yellow;
+	cursor: pointer;
+}

@@ -1,0 +1,17 @@
+.danhmuc{
+	height: 150px;
+	width: 200px;
+	
+	text-align: left;
+	float: left;
+	margin-right: 50px;
+
+
+}
+
+.danhmuc b:hover{
+	color: red;
+	cursor: pointer;
+	text-decoration: underline;
+
+}

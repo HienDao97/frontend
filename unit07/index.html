@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<!-- 	<style>
+		div{
+			/*-moz- fire fox
+			-o- opera 
+			-webkit- */
+			width: 200px;
+			height: 200px;
+			position: relative;
+			/*border-radius: 100px;*/
+			background-color: green;
+			background: linear-gradient(green, yellow);
+			animation-name: noname;
+			animation-duration: 8s;
+			animation-iteration-count: 2; /*so vong lap*/
+			/*animation-direction: reverse; --  chay nguoc kim dong ho*/
+			transform: rotate(30deg);
+		}
+
+		@keyframes noname{
+			0%{
+				top: 0;
+				left: 0;
+			}
+			12.5%{
+				top: 0;
+				left: 600px;
+				border-radius: 30%;
+			}
+			25%{
+				top: 600px;
+				left: 0;
+
+			}
+			37.5%{
+				top: 0;
+				left: 0;
+			}
+			50%{
+				top: 0;
+				left: 600px;
+			}
+			62.5%{
+				top: 600px;
+				left: 600px;
+			}
+			75%{
+				top: 600px;
+				left: 0;
+			}
+			100%{
+				top: 0;
+				left: 0;
+			}
+
+		}
+	</style> -->
+</head>
+<body>
+	<!-- <div></div>
+	<marquee loop="INFINITE" behavior="" direction="up" width="200px" height="300px">
+		<p>Lorem ipsum dolor sit amet.</p>
+		<p>Lorem ipsum dolor sit amet.</p>
+		<p>Lorem ipsum dolor sit amet.</p>
+		<p>Lorem ipsum dolor sit amet.</p>
+	</marquee>
+	 -->
+	<!--  <button onclick="alert('ZENT GROUP')"> click me</button> -->
+	<!-- <p id="text"> Lorem ipsum dolor sit amet.</p>
+	<p class="name"> Lorem ipsum dolor sit amet.</p>
+	<p class="name"> Lorem ipsum dolor sit amet.</p> -->
+	<input type="text" id="input">
+	<div id="content"></div>
+	
+	<button onclick="clickme()"> click me</button>
+	 <script>
+	 	var i=1;
+	 	// function clickme(){
+	 	// 	// if(confirm('do you want to ZENT')){
+	 	// 	// 	// window.location.href="https://zent.edu.vn/";
+	 	// 	// 	window.open('https://zent.edu.vn/', '_blank');
+	 	// 	// }
+	 	// 	// var t = prompt('Name:', 'will');
+	 	// 	// alert(t);
+	 	// 	var a= prompt('input a:');
+	 	// 	var b = prompt('input b:');
+	 	// 	alert(parseInt(a)+parseInt(b));
+	 	// } 
+
+	 	// function clickme(){
+	 	// 	document.getElementById('text').style.color="red";
+	 	// 	var a= document.getElementsByClassName('name');
+	 	// 	for (var i =a.length - 1; i >= 0; i--) {
+	 	// 	a[i].style.color="green";
+	 	// 	}
+	 	// }
+	 	function clickme(){
+	 		var a = document.getElementById('input');
+	 		var b =document.getElementById('content');
+	 		// b.innerHTML += a.value +  '<br>' ;
+	 		b.innerHTML='<p id="p'+i+'">'+a.value+'<button onclick = "del('+i+')">xoa</button></p>' +b.innerHTML;
+
+	 		a.value='';
+	 		i++;
+
+	 	}
+	 	function del(i){
+	 		document.getElementById('p'+i).remove();
+	 	}
+	 </script>
+</body>
+</html>

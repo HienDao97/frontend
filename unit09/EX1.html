@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<!-- <link rel="stylesheet" href="../css/unit9/ex1.css">  -->
+	<style>
+	*{
+		box-sizing: border-box;
+		margin: 0;
+	}
+	body{
+		/**/
+		background-color: 	 #ccccff;
+		background-size: cover;
+		overflow: hidden;
+	}
+	.content{
+		background-image: url(../images/AnhKhoa/bia.jpg);
+		background-size: cover;
+		width: 100%;
+		height: 577px;
+		margin-top: 8%;
+		position: relative;
+
+	}
+	form{
+		width: 550px;
+		height: 300px;
+		position: absolute;
+		top: 17%;
+		left: 30%;
+		border: 1px solid 	 #862d59;
+		border-radius: 15px;
+		background-color: rgba(255,255,255,0.2);
+
+
+	}
+	.sign{
+		width: 550px;
+		height: 250px;
+		opacity: 1;
+
+	}
+
+	.bt1{
+		background-color: red;
+		color: #fff;
+		margin-left: 24%;
+		margin-right:  23%;
+	}
+	.bt2{
+		background-color: red;
+		color: #fff;
+
+	}
+	.sub{
+		margin-top: 17px;
+		margin-left: 10px;
+
+
+
+	}
+	.sub1{
+		width: 120px;
+		float: left;
+
+
+	}
+	
+	.error{
+		width: 200px;
+		color: red;
+		float: right;
+	}
+
+</style>
+
+</head>
+<body>
+	<div class="content">
+		<form action="" onsubmit="return check()">
+			<div class="sign">
+				<div class="sub">
+					<div class="sub1">Ho va ten</div>
+					<div class="sub2"><input type="text"  placeholder="Ho va ten" onkeyup="Name()" id="name" name="name" onkeyup="check()" "></div>
+					<div class="error" id="z-name"></div>
+				</div>
+
+				<div class="sub">
+					<div class="sub1">Gioi tinh</div>
+					<div class="sub2">
+						
+						<input type="radio" name="gt" onkeyup="check()">Nam
+						<input type="radio" name="gt" onkeyup="check()">Nu
+
+					</div>
+					<div class="error"></div>
+				</div>
+
+
+				<div class="sub">
+					<div class="sub1">Email</div>
+					<div class="sub2"><input type="text"  placeholder="Nhap email" onkeyup="Email()" id="email" name="email" onkeyup="check()"  "></div>
+					<div id="z-email"  class="error"></div>
+				</div>
+				
+
+				<div class="sub">
+					<div class="sub1">So dien thoai</div>
+					<div class="sub2"><input type="text"  placeholder="Nhap so dien thoai" onkeyup="Number()" id="sdt" name="sdt" onkeyup="check()" "></div>
+					<div id="z-sdt"  class="error"></div>
+				</div>
+				
+
+				<div class="sub">
+					<div class="sub1">Mat khau</div>
+					<div class="sub2"><input type="password"  placeholder=""  id="password" onkeyup="Matkhau()"  name="password" onkeyup="check()" "></div>
+					<div id="z-password"  class="error"></div>
+				</div>
+
+				
+				<div class="sub">
+					<div class="sub1">Xac nhan mat khau</div>
+					<div class="sub2"><input type="password"  placeholder="" onkeyup="Password()"  id="cpassword" name="cpassword" onkeyup="check()"></div>
+					<div id="z-cpassword"  class="error"></div>
+				</div>
+
+			</div>
+			<button class="bt1" onclick="check()">Dang ky</button>
+			<button class="bt2" onclick="Reset()">Xoa trang</button>
+
+		</form>
+	</div>
+	<script>
+		
+		function check(){
+			var flag = false;
+			var data = new Array();
+			data[0] = document.getElementById('name').value;
+			data[1] = document.getElementById('email').value;
+			data[2] = document.getElementById('sdt').value;
+			data[3] = document.getElementById('password').value;
+			data[4] = document.getElementById('cpassword').value;
+
+			var myerror = new Array();
+			myerror[0] = "<p>Bạn chưa nhập tên</p>";
+			myerror[1] = "<p>Bạn chưa nhập email</p>";
+			myerror[2] = "<p>Bạn chưa nhập số điện thoại</p>";
+			myerror[3] = "<p>Bạn chưa nhập mật khẩu</p>";
+			myerror[4] = "<p>Bạn chưa nhập lại mật khẩu</p>";
+
+			var nearby = new Array("z-name", "z-email", "z-sdt","z-password", "z-cpassword");
+
+			for (var i =0; i<5; i++) {
+				var error = myerror[i];
+				var div = nearby[i];
+
+				if (data[i]=="") {
+					document.getElementById(div).innerHTML = error;
+					flag= false;
+				} else {
+					document.getElementById(div).innerHTML = "OK!";
+					flag= true;
+					
+				}
+			}
+			
+			return flag;
+		}
+		function Password() {
+			var fpw = document.getElementById("password").value;
+			var spw = document.getElementById("cpassword").value;
+
+			if (fpw==spw) {
+				return true;
+			} else {
+				
+				var t = document.getElementById('z-cpassword');
+				t.innerHTML='Bạn nhập chưa khớp mật khẩu ';
+				
+			}
+		}
+		function Email(){
+			var reg_mail = /^[A-Za-z0-9]+([_\.\-]?[A-Za-z0-9])*@[A-Za-z0-9]+([\.\-]?[A-Za-z0-9]+)*(\.[A-Za-z]+)+$/;
+			var value = document.getElementById('email').value;
+			if(reg_mail.test(value) == false){
+				var m= document.getElementById('z-email');
+				m.innerHTML ='Email không hợp lệ (ví dụ: abc@gmail.com)';
+				// console.log(m);
+				// console.log(m.innerHTML);
+
+			}
+
+		}
+
+		function Name() {
+			var str = document.getElementById('name').value;
+
+			if (str.length<8) {
+				
+				var n = document.getElementById('z-name');
+				n.innerHTML='Tên phải có ít nhất 8 ký tự';
+				
+			}
+		}
+
+		function Number(){
+			var p = document.getElementById('sdt').value;
+			 if(isNaN(p) == true){
+			 	var phone = document.getElementById('z-sdt');
+			 	phone.innerHTML ='Số điện thoại phải là kiểu số';}
+		}
+
+		function Matkhau() {
+			var sr = document.getElementById('password').value;
+
+			if (sr.length<6) {
+				
+				var k = document.getElementById('z-password');
+				k.innerHTML='Mật khẩu  phải có ít nhất 6 ký tự';
+				
+			}
+		}
+		function Reset(){
+			document.getElementById("name").reset();
+			document.getElementById("email").reset();
+			document.getElementById("sdt").reset();
+			document.getElementById("password").reset();
+			document.getElementById("cpassword").reset();
+		}
+
+	</script>
+
+
+</body>
+</html>

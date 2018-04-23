@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<style>
+		nav{
+			background-color: green;
+			height: 42px;
+		}
+		li{
+			list-style: none;
+		}
+		
+		ul{
+			padding-left: 0;
+
+		}
+		a{
+			text-decoration: none;
+			color: #fff;
+		}
+		.menu>li{
+			float: left;
+			line-height: 42px;
+			position: relative;
+		}
+		.menu>li>a{
+			
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+		.menu>li:hover{
+			background-color: black;
+		}
+		
+		.sub{
+			display: none;
+			position: absolute;
+			background-color: green;
+			width: 200px;
+
+		}
+		.sub>li{
+			position: relative;
+		}
+
+		.menu>li:hover .sub{
+			display: block;
+		}
+		.sub>li:hover{
+			background-color: black;
+		}
+		.child{
+			position: absolute;
+			display: none;
+			background-color: green;
+			width: 200px;
+			left: 200px;
+			top: 0;
+
+		}
+		.sub>li:hover .child{
+			display: block;
+		}
+		.child>li:hover{
+			background-color: black;
+		}
+	</style>
+</head>
+<body >
+	
+	<nav>
+		<ul class="menu">
+			<li> <a href="#"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+			<li> <a href="#">About</a> </li>
+			<li> <a href="#">Course </a>
+				<ul class="sub">
+					<li> <a href="#">JAVA</a>
+						<ul class="child">
+							<li> <a href="#">JAVA_CORE1</a></li>
+							<li><a href="#">JAVA_CORE2</a></li>
+						</ul>
+					</li>
+					<li><a href="#">PHP</a></li>
+					<li><a href="#">FRONT END</a></li>
+				</ul>
+			</li>
+			<li> <a href="#">Contact </a></li>
+		</ul>
+	</nav>
+	
+</body>
+</html>
